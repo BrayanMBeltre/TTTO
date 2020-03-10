@@ -1,0 +1,6 @@
+Django
+gevent
+greenlet
+mock
+redis
+django_nose

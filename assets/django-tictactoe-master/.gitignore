@@ -1,0 +1,16 @@
+*.py[co]
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+develop-eggs
+.installed.cfg
+tags
+pip-log.txt
+.coverage
+.tox
+dev.db
+local_settings.py
