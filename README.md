@@ -60,6 +60,7 @@
       * Table Skin
       * Streak Skin
   * Log Out
+* Exit
 * **Options**
   * Display
     * Brightness
