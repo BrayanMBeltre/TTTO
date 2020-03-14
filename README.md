@@ -60,7 +60,6 @@
       * Table Skin
       * Streak Skin
   * Log Out
-* Exit
 * **Options**
   * Display
     * Brightness
@@ -69,8 +68,28 @@
     * SFX Volume
     * Music Volume
     * ??? Reset Settings
-
+* **Exit**
 ---
 
 ## InGame Content UI
 
+* **OffLine**
+  * History Mode
+    * Chapter
+    * Textboxes ???
+    * Menu
+  * Vs IA
+    * Wins
+    * Loses
+    * Draws
+    * Difficulty
+    * Restart
+    * Menu
+  * Player Vs Player
+    * Names
+    * Wins
+    * Loses
+    * Draws
+    * 
+    * Chronometer
+    * 
