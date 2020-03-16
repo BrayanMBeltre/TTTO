@@ -69,6 +69,7 @@
     * Music Volume
     * ??? Reset Settings
 * **Exit**
+
 ---
 
 ## InGame Content UI
@@ -90,6 +91,5 @@
     * Wins
     * Loses
     * Draws
-    * 
+    *
     * Chronometer
-    * 

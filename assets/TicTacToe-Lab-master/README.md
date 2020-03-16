@@ -36,13 +36,15 @@ Today we will be making a Tic Tac Toe game using all of this.
       will be used to indicate whether or not to draw an `X` or an `O`.
 
 ## Bonus
+
 * Display a message to indicate which turn is about to be played.
 * After the necessary moves have been played, stop game and alert the
   winner if one player ends up winning with three in a row.
-    * Hint: Determine a set of winning combinations. Check those
+  * Hint: Determine a set of winning combinations. Check those
       combinations on the board contents after every move.
 
 ## Ultra Bonus
+
 * We once had a student implement an Artifical Intelligence (AI)
   opponent. If you really need a challenge, write some code that will
   play a game of Tic Tac Toe against you. (Hint: look into the minimax
