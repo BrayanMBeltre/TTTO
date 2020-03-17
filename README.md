@@ -8,6 +8,23 @@
 
 ---
 
+### **LogIn/SignUp Menu**
+
+* **LogIn**
+  * Nick o Email
+  * PassWord
+  * Forgot PassWord?
+  * LogIn
+  * LogIn With Google
+* **SignUp**
+  * Email
+  * Nick
+  * PassWord
+  * Confirm PassWord
+  * Create
+* **Play As Guest**
+* **Exit**
+
 ### **Principal Menu**
 
 * **OffLine**
