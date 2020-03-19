@@ -26,7 +26,7 @@
 - **Play As Guest**
 - **Exit**
 
-### **Principal Menu**
+### **Principal Menu** -- Cambiar por el menu que envio sebastian
 
 - **OffLine**
   - History Mode
@@ -38,6 +38,7 @@
     - Select Difficulty
   - Player Vs Player
     - Play
+    - 3x3 o 9x9
 - **OnLine**
   - Player vs Player
     - Quick Play
@@ -57,6 +58,7 @@
   - Time Rush
     - Quick Play
     - Ranked
+  - 
 - **Profile**
   - My Stats
     - Rewards -- Menu principal
