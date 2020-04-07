@@ -1,7 +1,7 @@
 <script>
   import Square from "./Square.svelte";
   let squares = [null, null, null, null, null, null, null, null, null];
-  let contador = 3;
+  let contador = 0;
   let xIsNext = true;
   $: status = "Próximo jugador: " + (xIsNext ? "X" : "0");
 
@@ -16,18 +16,18 @@
   }
   function Limpiar() {
     const contando = setInterval(() => {
-      contador -= 1;
+      contador += 1;
 
-      if (contador <= 0) {
+      if (contador >= 3) {
         squares = [null, null, null, null, null, null, null, null, null];
         xIsNext = true;
         ganador = "";
         clearInterval(contando);
         setTimeout(() => {}, 1000);
-        contador = 3;
+        contador = 0;
       }
     }, 1000);
-    return "";
+    return "Reiniciando...";
   }
   function calcularGanador(squares) {
     const ComboGanador = [
@@ -64,7 +64,6 @@
 {#if ganador}
 <h3>{ganador}</h3>
 {Limpiar()}
-<p>Reiniciando en {contador}</p>
 <!--  <button on:click={Limpiar}>
     Limpiar tablero
 </button>-->
@@ -76,4 +75,3 @@
   {#each squares as square, i} <Square value={square} handleClick={() =>
   handleClick(i)} /> {/each}
 </div>
-
