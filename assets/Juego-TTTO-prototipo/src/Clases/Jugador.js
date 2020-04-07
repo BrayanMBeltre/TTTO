@@ -8,7 +8,7 @@ class Jugador {
     //Da error si el primer argumento de la funcion no es un tablero
     if (tablero.constructor.name !== "Tablero")
       throw "El primer argumento de la función Movimiento_optimo debe ser una instancia de la clase Tablero";
-    //Esto directamente lo copié, no sé para qué sirve.
+    //!Esto directamente lo copié, no sé para qué sirve.
     const TRACE = window.trace_ttt;
     //Limpia la variable Nodes_Map si se hace un nuevo movimiento
     if (prof == 0) this.nodes_map.clear();

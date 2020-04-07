@@ -1,4 +1,4 @@
-import Tablero from "./Clases/Tablero";//Se importan las distintas clases necesarias para el funcionamiento del juego.
+import Tablero from "./Clases/Tablero";//*Se importan las distintas clases necesarias para el funcionamiento del juego.
 import Jugador from "./Clases/Jugador";
 alert("hola, esto es una prueba")
 let tablero = new Tablero(['x','','o','x','','x','o','','o'])
