@@ -17,18 +17,14 @@
   function Limpiar(){
     const contando = setInterval(()=>{
         contador += 1;
-    
+    })
     if(contador>=3){
     squares = [null, null, null, null, null, null, null, null, null];
     xIsNext = true;
-     ganador ="";
+    ganador ="";
     clearInterval(contando);
-    setTimeout(()=>{
-    },1000);
-    contador = 0;}
-  },1000);
-  return "Reiniciando...";
-}
+    }
+  }
   function calcularGanador(squares) {
     const ComboGanador = [
       [0, 1, 2],
@@ -47,7 +43,6 @@
     }
     const empate = squares.every(square => square !== null);
     return empate ? "Es un empate":null;
-    
   }
 </script>
 
@@ -64,9 +59,9 @@
 
 {#if ganador}
 <h3>{ganador}</h3>
-  {Limpiar()} <!--  <button on:click={Limpiar}>
+<button on:click={Limpiar}>
     Limpiar tablero
-</button>-->
+    </button>
 {:else}
 <h3>{status}</h3>
 {/if}
@@ -74,3 +69,4 @@
 <div class="tablero">
   {#each squares as square, i} <Square value={square} handleClick={() => handleClick(i)} /> {/each}
 </div>
+<p>{contador}</p>
