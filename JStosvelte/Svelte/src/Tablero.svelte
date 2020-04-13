@@ -1,6 +1,6 @@
 <script>
   import Square from "./Square.svelte";
-  let squares = [null, null, null, null, null, null, null, null, null];
+  let squares = ["X", null, null, null, null, null, null, null, null];
   let contador = 0;
   let xIsNext = true;
   $: status = "Próximo jugador: " + (xIsNext ? "X" : "0");
