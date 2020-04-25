@@ -1,17 +1,15 @@
-//import Tablero from "./Tablero";
+import Tablero from "./Tablero";
 class Jugador {
+  
   constructor(prof_max = -1) {
     this.prof_max = this.prof_max;
     this.nodes_map = new Map();
   }
-  Prueba(){
-    return "";
-  }
   Movimiento_optimo(tablero, maximizing = true, callback = () => {}, prof = 0) {
     //Da error si el primer argumento de la funcion no es un tablero
-    if (tablero.constructor.name !== "Tablero")
-      throw "El primer argumento de la función Movimiento_optimo debe ser una instancia de la clase Tablero";
-    //!Esto directamente lo copié, no sé para qué sirve.
+    //!if (tablero.constructor.name !== "Tablero")
+      //!throw "El primer argumento de la función Movimiento_optimo debe ser una instancia de la clase Tablero";
+    //Esto directamente lo copié, no sé para qué sirve.
     const TRACE = window.trace_ttt;
     //Limpia la variable Nodes_Map si se hace un nuevo movimiento
     if (prof == 0) this.nodes_map.clear();
@@ -90,6 +88,7 @@ class Jugador {
           console.log(`%cMove ${ret} was decided as the best move`, best_move);
         }
         callback(ret);
+        this.MejorJugada=ret;
         return ret;
       }
       return mejor;
@@ -136,14 +135,16 @@ class Jugador {
           var arr = this.nodes_map.get(mejor).split(",");
           var rand = Math.floor(Math.random() * arr.length);
           var ret = arr[rand];
+          
         } else {
           ret = this.nodes_map.get(mejor);
         }
+        
         callback(ret);
         return ret;
       }
       return mejor;
     }
-  }
+   }
 }
 export default Jugador;

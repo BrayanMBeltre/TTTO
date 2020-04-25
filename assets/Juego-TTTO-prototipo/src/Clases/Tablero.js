@@ -65,7 +65,7 @@ class Tablero {//Esta es la clase Tablero, se utiliza para definir el tablero en
       this.Estado[6] == this.Estado[8] &&
       this.Estado[6]
     ) {
-      return { Ganador: this.Estado[3], dirección: "H", Columna: 3 };
+      return { Ganador: this.Estado[6], dirección: "H", Columna: 3 };
     }
     //Se verificará si se ha ganado verticalemente
     if (
@@ -81,15 +81,15 @@ class Tablero {//Esta es la clase Tablero, se utiliza para definir el tablero en
       this.Estado[1] == this.Estado[7] &&
       this.Estado[1]
     ) {
-      return { Ganador: this.Estado[3], dirección: "V", Columna: 2 };
+      return { Ganador: this.Estado[1], dirección: "V", Columna: 2 };
     }
 
     if (
-      this.Estado[2] == this.Estado[4] &&
-      this.Estado[5] == this.Estado[8] &&
+      this.Estado[2] == this.Estado[5] &&
+      this.Estado[2] == this.Estado[8] &&
       this.Estado[2]
     ) {
-      return { Ganador: this.Estado[3], dirección: "V", Columna: 3 };
+      return { Ganador: this.Estado[2], dirección: "V", Columna: 3 };
     }
     //Se verificará si se ha ganado de manera diagonal
     if (
@@ -103,9 +103,9 @@ class Tablero {//Esta es la clase Tablero, se utiliza para definir el tablero en
     if (
       this.Estado[2] == this.Estado[4] &&
       this.Estado[2] == this.Estado[6] &&
-      this.Estado[3]
+      this.Estado[2]
     ) {
-      return { Ganador: this.Estado[3], dirección: "H", Columna: 2 };
+      return { Ganador: this.Estado[2], dirección: "D", Columna: 2 };
     }
     //En caso de que no haya ganador, pero el tablero esté lleno, será un empate.
     if (this.TableroLleno()) {

@@ -1,11 +1,8 @@
 <script>
   import Square from "./Square.svelte";
   import tablero from './Tablero.js';
-  import Computador from './Jugador.js';
-  let Compu = new Computador();
   let squares = [null, null, null, null, null, null, null, null, null];
   let Tablero = new tablero(['','','','','','','','','']);
-
  /*let Ultimate =[
     {Tablero1:[null, null, null, null, null, null, null, null, null]},
     {Tablero2:[null, null, null, null, null, null, null, null, null]},
@@ -17,24 +14,50 @@
     {Tablero8:[null, null, null, null, null, null, null, null, null]},
     {Tablero9:[null, null, null, null, null, null, null, null, null]},
   ]*/
-
   let contador = 3;
   let xIsNext = true;
   $: status = "Próximo jugador: " + (xIsNext ? "X" : "O");
+
   let ganador = null;
+
+  function LlamarConsola(){
+  Tablero.TableroConsola();
+	console.log(Compu.Movimiento_optimo(Tablero));
+	console.log(Compu.nodes_map);
+	console.log(Tablero.EstadoTablero());
+  }
 
   function handleClick(i) {
     if (!squares[i]) {
       //squares[i] = xIsNext ? "X" : "O";
-      Tablero.Insertar('x',i)
+      if(squares[i]==0){
+        Tablero.Insertar('x',0)
+      }
+      if(squares[i]==1){
+        Tablero.Insertar('x',1)
+      }
+      if(squares[i]==2){
+        Tablero.Insertar('x',2)
+      }
+      if(squares[i]==3){
+        Tablero.Insertar('x',3)
+      }
+      if(squares[i]==4){
+        Tablero.Insertar('x',4)
+      }
+      if(squares[i]==5){
+        Tablero.Insertar('x',5)
+      }
+      if(squares[i]==6){
+        Tablero.Insertar('x',6)
+      }
+      if(squares[i]==7){
+        Tablero.Insertar('x',7)
+      }
+      if(squares[i]==8){
+        Tablero.Insertar('x',8)
+      }
       squares[i] = "X"
-      let MejorJugada = Compu.Movimiento_optimo(Tablero);
-      squares[MejorJugada] = "O"
-      Tablero.Insertar('o',MejorJugada)
-      Tablero.TableroConsola();
-      console.log(Compu.Movimiento_optimo(Tablero));
-      console.log(Compu.nodes_map);
-  	  console.log(Tablero.EstadoTablero());
       ganador = calcularGanador(squares);
     }
   }
@@ -44,15 +67,14 @@
 
       if (contador <= 0) {
         squares = [null, null, null, null, null, null, null, null, null];
-        Tablero = new tablero();
-        //xIsNext = true;
+        xIsNext = true;
         ganador = null;
         clearInterval(contando);
         setTimeout(() => {}, 1000);
         contador = 3;
       }
     }, 1000);
-    return "";
+    return null;
   }
   function calcularGanador(squares) {
     const ComboGanador = [
@@ -74,6 +96,7 @@
     return empate ? "Es un empate" : null;
   }
 
+  
 </script>
 
 <style>
@@ -99,4 +122,6 @@
   {#each squares as square, i} <Square value={square} handleClick={() =>
   handleClick(i)} /> {/each}
 </div>
-
+<button on:click={LlamarConsola}>
+Consola
+</button>
