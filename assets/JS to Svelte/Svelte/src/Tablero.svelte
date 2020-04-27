@@ -26,7 +26,7 @@
   function handleClick(i) {
     if (!squares[i]) {
       //squares[i] = xIsNext ? "X" : "O";
-      Tablero.Insertar('x',i)
+    Tablero.Insertar('x',i)
       squares[i] = "X"
       let MejorJugada = Compu.Movimiento_optimo(Tablero);
       squares[MejorJugada] = "O"

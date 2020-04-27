@@ -20,6 +20,10 @@
     .square:hover {
       border: 2px solid red;
     }
+    .square:hover:after{
+      content: 'X';
+      color:red;
+    }
   </style>
   
   <button class="square" on:click={handleClick}>{value||""}</button>
