@@ -1,4 +1,5 @@
 <script>
+  //Se importan las clases necesarias para el funcionamiento del programa
   import Square from "./Square.svelte";
   import tablero from './Tablero.js';
   import Computador from './Jugador.js';
@@ -22,22 +23,38 @@
   let xIsNext = true;
   $: status = "Próximo jugador: " + (xIsNext ? "X" : "O");
   let ganador = null;
-
+//Esta función se ejecutará cada vez que el jugador presione un botón siempre y cuando no se haya jugado previamente en este.
   function handleClick(i) {
     if (!squares[i]) {
-      //squares[i] = xIsNext ? "X" : "O";
-    Tablero.Insertar('x',i)
+      //------> Esto es para modo 2 jugadores, revisar luego <------- squares[i] = xIsNext ? "X" : "O";
+      //Inserta en el tablero el movimiento del jugador en el tablero de la IA para ser procesada por esta.
+      Tablero.Insertar('x',i)
+
+      //Se le asigna el valor a la posición en el que el jugador jugó.
       squares[i] = "X"
+
+      //La Función "Movimiento_optimo" de la clase Jugador retorna un valor, ese valor es la posición en el que sería el mejor movimiento.
       let MejorJugada = Compu.Movimiento_optimo(Tablero);
+
+      //Se le asigna el valor a la posición en el que la IA consideró como mejor jugada.
       squares[MejorJugada] = "O"
+
+      //Inserta en el tablero el movimiento que la IA consideró como mejor jugada.
       Tablero.Insertar('o',MejorJugada)
+
+      //En esta variable se almacenará al jugador que ganó.
+      ganador = calcularGanador(squares);
+
+      //A partir de aquí es para visualizar en la consola el estado del juego, este puede ser eliminado sin problema.
+      /***********************************************/
       Tablero.TableroConsola();
       console.log(Compu.Movimiento_optimo(Tablero));
       console.log(Compu.nodes_map);
-  	  console.log(Tablero.EstadoTablero());
-      ganador = calcularGanador(squares);
+      console.log(Tablero.EstadoTablero());
+      /***********************************************/
     }
   }
+  //Limpia el tablero una vez que la partida finalice.
   function Limpiar() {
     const contando = setInterval(() => {
       contador -= 1;
@@ -54,6 +71,7 @@
     }, 1000);
     return "";
   }
+  //Esta función se utilizará para determinar al ganador de la partida.
   function calcularGanador(squares) {
     const ComboGanador = [
       [0, 1, 2],
@@ -65,6 +83,7 @@
       [0, 4, 8],
       [2, 4, 6],
     ];
+    //-----------------------> No comprendo bien cómo funciona este código, revisar más adelante. <-------------------
     for (let i = 0; i < ComboGanador.length; i++) {
       const [a, b, c] = ComboGanador[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c])
@@ -73,7 +92,7 @@
     const empate = squares.every((square) => square !== null);
     return empate ? "Es un empate" : null;
   }
-
+//A partir de aquí empieza el apartado visual de la página web.
 </script>
 
 <style>
