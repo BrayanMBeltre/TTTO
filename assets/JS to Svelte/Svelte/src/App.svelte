@@ -1,9 +1,7 @@
 <script>
 	import Tablero2 from './Tablero.svelte';
+	import Tablero2P from './TwoP.svelte';
 	const title = "Tic Tac toe";
-	import tablero from './Tablero.js';
-	import Computador from './Jugador.js';
-	import square from './Square.svelte';
 </script>
 
 <svelte:head>
@@ -12,5 +10,8 @@
 	
 </svelte:head>
 <h1>{title}</h1>
+<button onclick="">
+	Modo 2 jugadores
+</button>
 <Tablero2/>
 

@@ -7,18 +7,6 @@
   let squares = [null, null, null, null, null, null, null, null, null];
   let Tablero = new tablero(['','','','','','','','','']);
 
- /*let Ultimate =[
-    {Tablero1:[null, null, null, null, null, null, null, null, null]},
-    {Tablero2:[null, null, null, null, null, null, null, null, null]},
-    {Tablero3:[null, null, null, null, null, null, null, null, null]},
-    {Tablero4:[null, null, null, null, null, null, null, null, null]},
-    {Tablero5:[null, null, null, null, null, null, null, null, null]},
-    {Tablero6:[null, null, null, null, null, null, null, null, null]},
-    {Tablero7:[null, null, null, null, null, null, null, null, null]},
-    {Tablero8:[null, null, null, null, null, null, null, null, null]},
-    {Tablero9:[null, null, null, null, null, null, null, null, null]},
-  ]*/
-
   let contador = 3;
   let xIsNext = true;
   $: status = "Próximo jugador: " + (xIsNext ? "X" : "O");
@@ -36,6 +24,9 @@
       //La Función "Movimiento_optimo" de la clase Jugador retorna un valor, ese valor es la posición en el que sería el mejor movimiento.
       let MejorJugada = Compu.Movimiento_optimo(Tablero);
 
+      if(MejorJugada>8){
+      }
+      else{
       //Se le asigna el valor a la posición en el que la IA consideró como mejor jugada.
       squares[MejorJugada] = "O"
 
@@ -52,6 +43,7 @@
       console.log(Compu.nodes_map);
       console.log(Tablero.EstadoTablero());
       /***********************************************/
+      }
     }
   }
   //Limpia el tablero una vez que la partida finalice.
@@ -103,6 +95,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 300px;
+    align-self: center;
   }
 </style>
 
